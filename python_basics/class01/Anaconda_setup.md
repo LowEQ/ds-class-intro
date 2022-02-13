@@ -91,4 +91,33 @@ conda deactivate
 conda env list
 
 # windows should be similar with some modification
-```
+Use anaconda prompt, instead of terminal, command are same in windows
+
+//create a enviroment named "intro" with python version 3
+conda create -n intro python=3
+
+//list all the conda managed enviroments
+conda env list
+
+//enter the defined enviroment
+conda activate <enviroment_name>
+
+//install packages with conda
+conda install nympy pandas jupyter notebook git matplotlib seaborn pandas-profiling scipy
+
+//lis all the intalled packages and its version of current env
+conda list
+
+/*export image file that can used for restore current env 
+(note: here the .yml file is created under the path where you run the command)
+i.e. if you run it under c:\users\username> then it will be at that repo*/
+conda  env export > enviroment.yml
+
+//list the .yml info
+cat enviroment.yml
+
+//step out from current env > back to base
+conda deactivate
+
+//delete the unwanted conda env
+conda env remove -n ENV_NAME
